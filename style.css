@@ -1,0 +1,311 @@
+/* ======= GLOBAL ======= */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  height: 100vh;
+}
+
+/* ======= ESTRUCTURA ======= */
+.app {
+  display: flex;
+  width: 100%;
+}
+
+.sidebar {
+  background: linear-gradient(180deg, #0a0a0a 0%, #1b1b1b 100%);
+  width: 280px;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  box-shadow: 4px 0 25px rgba(199, 112, 255, 0.15);
+  border-right: 1px solid #2b0040;
+}
+
+.sidebar h2 {
+  font-size: 1.5rem;
+  color: #c770ff;
+  text-shadow: 0 0 12px #c770ff66;
+  letter-spacing: 1px;
+  text-align: center;
+  margin: 0;
+}
+
+.sidebar h3 {
+  color: #fff;
+  border-bottom: 1px solid #2b0040;
+  padding-bottom: 4px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.logo {
+  width: 100px;
+  margin: 0 auto 10px auto;
+  filter: drop-shadow(0 0 6px #c770ff55);
+}
+
+/* ======= BOTONES DE PRODUCTO ======= */
+.prod-btn {
+  display: block;
+  width: 100%;
+  padding: 12px 10px;
+  background: linear-gradient(135deg, #1a1a1a, #2b0040);
+  border: 1px solid #c770ff55;
+  color: #c770ff;
+  cursor: pointer;
+  margin-bottom: 8px;
+  border-radius: 10px;
+  font-weight: 600;
+  transition: all 0.25s ease;
+  box-shadow: 0 0 12px #c770ff22;
+  text-transform: uppercase;
+}
+
+.prod-btn:hover {
+  background: linear-gradient(135deg, #2b0040, #4a007e);
+  box-shadow: 0 0 18px #c770ff77;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* ======= SELECT (Artistas) ======= */
+.sidebar select {
+  padding: 10px;
+  background-color: #1a1a1a;
+  color: #c770ff;
+  border: 1px solid #c770ff88;
+  border-radius: 8px;
+  font-size: 15px;
+  box-shadow: 0 0 12px #c770ff33;
+  transition: all 0.3s ease;
+}
+
+.sidebar select:hover {
+  box-shadow: 0 0 15px #b026ff77;
+  background-color: #2b0040;
+}
+
+/* ======= MAIN ======= */
+.main {
+  flex: 1;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: #000;
+}
+
+/* ======= MODEL VIEWER AREA ======= */
+.viewer-area {
+  flex: 1;
+  position: relative;
+  background-color: #000;
+  border-bottom: 1px solid #2b0040;
+  box-shadow: 0 4px 20px #000 inset;
+}
+
+/* ======= OVERLAY ======= */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+#artistImg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30%;
+  cursor: move;
+  pointer-events: auto;
+  transition: all 0.2s ease;
+}
+
+#qrImg {
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+  width: 10%;
+  cursor: move;
+  pointer-events: auto;
+  transition: all 0.2s ease;
+}
+
+/* === Ajustes para el logo movible === */
+#logoImg {
+  position: absolute;
+  bottom: 5%;
+  left: 5%;
+  width: 8%;
+  cursor: move;
+  pointer-events: auto;
+  transition: all 0.2s ease;
+  opacity: 0.9;
+}
+
+/* ======= PREVIEW PANEL ======= */
+.preview-panel {
+  padding: 20px;
+  background-color: #0a0a0a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-top: 1px solid #2b0040;
+  box-shadow: 0 -4px 20px #c770ff22;
+}
+
+.preview-panel h3 {
+  margin: 10px 0 15px 0;
+  color: #c770ff;
+  text-shadow: 0 0 10px #c770ff66;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.preview-imgs {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.preview-imgs img {
+  width: 80px;
+  height: auto;
+  border: 2px solid #2b0040;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.preview-imgs img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #b026ff;
+}
+
+/* ======= SLIDERS ======= */
+.sliders {
+  width: 80%;
+  max-width: 340px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  text-align: left;
+  color: #c770ff;
+  text-shadow: 0 0 6px #c770ff55;
+}
+
+.sliders label {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.sliders input[type="range"] {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 6px;
+  background: #222;
+  border-radius: 5px;
+  outline: none;
+  box-shadow: 0 0 12px #b026ff, 0 0 24px #b026ff33;
+}
+
+.sliders input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #c770ff;
+  box-shadow: 0 0 15px #c770ff, 0 0 25px #b026ff;
+  cursor: pointer;
+}
+
+/* ======= LIMITE DE ÁREA ======= */
+#overlay {
+  overflow: hidden;
+}
+
+/* ======= AVISO LEGAL ======= */
+.legal-note {
+  position: absolute;
+  bottom: 8px;
+  left: 12px;
+  width: calc(100% - 24px);
+  font-size: 10px;
+  color: #888;
+  opacity: 0.6;
+  text-align: left;
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.3;
+  pointer-events: none;
+  user-select: none;
+  letter-spacing: 0.3px;
+}
+
+.legal-note:hover {
+  opacity: 0.9;
+}
+
+/* ======= INSTRUCCIONES ======= */
+.instructions {
+  background: radial-gradient(circle at top left, #1a001f 0%, #000 80%);
+  color: #c770ff;
+  text-align: center;
+  padding: 20px 10px;
+  border-top: 1px solid #2b0040;
+  border-bottom: 1px solid #2b0040;
+  box-shadow: inset 0 0 25px #c770ff22;
+  font-family: 'Poppins', sans-serif;
+}
+
+.instructions h4 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-shadow: 0 0 6px #b026ff66;
+}
+
+.instructions p {
+  margin: 8px 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #ddd;
+}
+
+.instructions .visit {
+  font-size: 0.85rem;
+  margin-top: 10px;
+  color: #c770ff;
+  text-shadow: 0 0 8px #c770ff55;
+  font-weight: 500;
+}
+
+/* ======= FOOTER DE MARCA ======= */
+.brand-footer {
+  position: absolute;
+  bottom: 10px;
+  left: 20px;
+  text-align: center;
+  color: #c770ff;
+  font-size: 12px;
+  opacity: 0.8;
+  font-family: 'Poppins', sans-serif;
+}
+
+.logo-footer {
+  width: 80px;
+  display: block;
+  margin: 0 auto 2px auto;
+  filter: drop-shadow(0 0 6px #c770ff55);
+}
