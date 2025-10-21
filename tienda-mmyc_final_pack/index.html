@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tienda MMYC - Catálogo 3D</title>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      
+      <div class="brand-footer">
+        <img src="images/logo.png" alt="MM&C" class="logo-footer">
+        <p>Tienda</p>
+      </div>
+
+      <div class="products-list">
+        <h3>Productos</h3>
+        <button class="prod-btn" data-model="models/camiseta.glb">Camiseta</button>
+        <button class="prod-btn" data-model="models/manga_larga.glb">Manga Larga</button>
+        <button class="prod-btn" data-model="models/oversize.glb">Oversize</button>
+        <button class="prod-btn" data-model="models/chaqueta.glb">Chaqueta</button>
+        <button class="prod-btn" data-model="models/buzo.glb">Buzo</button>
+      </div>
+
+      <div class="artists-list">
+        <h3>Artistas</h3>
+        <select id="artistSelect">
+          <option value="badbunny">Bad Bunny</option>
+          <option value="feid">Feid</option>
+          <option value="dualipa">Dua Lipa</option>
+          <option value="shakira">Shakira</option>
+          <option value="coldplay">Coldplay</option>
+          <option value="acdc">AC DC</option>
+          <option value="morat">Morat</option>
+          <option value="imaginedragons">Imagine Dragons</option>
+          <option value="kendricklamar">Kendrick Lamar</option>
+          <option value="michaeljackson">Michael Jackson</option>
+          <option value="harrystiles">Harry Stiles</option>
+          <option value="gruponiche">Grupo Niche</option>
+          <option value="blessd">Blessd</option>
+          <option value="linkinpark">Linkin Park</option>
+          <option value="theweeknd">The Weeknd</option>
+          <option value="gunsnroses">Guns N Roses</option>
+          <option value="adele">Adele</option>
+          <option value="cancerbero" selected>Cancerbero</option>
+        </select>
+      </div>
+      <!-- Bloque de instrucciones -->
+<div class="instructions">
+  <h4>✨ Personaliza tu prenda en línea ✨</h4>
+  <p>
+    Mueve el diseño y el código QR sobre la prenda para explorar tu estilo único.<br>
+    Ajusta su tamaño con los controles inferiores.
+  </p>
+  <p class="visit">
+    💜 Ven a nuestro local físico y vive la experiencia completa de personalización con MM&C.<br>
+    Música, moda y tecnología, todo en un mismo lugar.
+  </p>
+</div>
+
+    </aside>
+
+    <main class="main">
+      <div class="viewer-area">
+        <model-viewer id="mv" src="models/camiseta.glb" camera-controls interaction-prompt="none" style="width:100%; height:100%; background-color:#000"></model-viewer>
+
+        <div id="overlay" class="overlay">
+          <img id="artistImg" src="images/disenos/cancerbero.png" alt="artist">
+          <img id="qrImg" src="images/qr/cancerbero.png" alt="qr">
+          <img id="logoImg" src="images/logo.png" alt="logo">
+        </div>
+      </div>
+        <div class="legal-note">
+          Las imágenes, logos y nombres de artistas son utilizados únicamente con fines educativos y de demostración visual. 
+           MM&C no posee derechos comerciales sobre ellos ni realiza uso con fines de lucro. 
+        </div>
+</div>
+
+
+      <div class="preview-panel">
+        <h3>Vista previa</h3>
+        <div class="preview-imgs">
+          <img id="pvArtist" src="images/disenos/cancerbero.png" alt="artist">
+          <img id="pvQR" src="images/qr/cancerbero.png" alt="qr">
+        </div>
+       
+
+        <!-- 🎚️ Sliders de tamaño -->
+        <div class="sliders">
+          <label for="artistSize">Tamaño del diseño:</label>
+          <input type="range" id="artistSize" min="10" max="60" value="30">
+
+          <label for="qrSize">Tamaño del QR:</label>
+          <input type="range" id="qrSize" min="5" max="25" value="10">
+
+          <label for="logoSize">Tamaño del logo:</label>
+          <input type="range" id="logoSize" min="5" max="25" value="8">
+
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
